@@ -5,31 +5,6 @@ import Features from './components/Features'
 import Property from './components/Property'
 import Location from './components/Location'
 
-/*
-const App = () => (
-  <>
-    <Header />
-
-    <Property>
-      <Detail />
-      <Features />
-      <Location />
-      <Agent />
-    </Property>
-
-    <Property>
-      <Detail />
-      <Features />
-      <Location />
-      <Agent />
-    </Property>
-
-    ...
-    
-  </>
-)
-*/
-
 export type PropsData = {
   property: {
     name: string
