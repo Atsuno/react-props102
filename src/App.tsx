@@ -4,6 +4,7 @@ import Detail from './components/Detail'
 import Features from './components/Features'
 import Property from './components/Property'
 import Location from './components/Location'
+import Header from './components/Header'
 
 export type PropsData = {
   property: {
@@ -18,7 +19,7 @@ export type PropsData = {
   }
   features: Array<{
     name: string
-    isPackage: boolean
+    isAvailable: boolean
   }>
   location: {
     street: string
@@ -27,7 +28,7 @@ export type PropsData = {
     zip: string
   }
   agent: {
-    isMember: boolean
+    isPaid: boolean
     name: string
     email: string
     phone: string
@@ -49,19 +50,19 @@ const data: Array<PropsData> = [
     features: [
       {
         name: 'Swimming pool',
-        isPackage: true,
+        isAvailable: true,
       },
       {
         name: 'Home theater',
-        isPackage: true,
+        isAvailable: true,
       },
       {
         name: 'Wine cellar',
-        isPackage: false,
+        isAvailable: false,
       },
       {
         name: 'Gym',
-        isPackage: true,
+        isAvailable: true,
       },
     ],
     location: {
@@ -71,7 +72,7 @@ const data: Array<PropsData> = [
       zip: '90210',
     },
     agent: {
-      isMember: false,
+      isPaid: false,
       name: 'John Doe',
       email: 'john.doe@example.com',
       phone: '123-456-7890',
@@ -91,15 +92,15 @@ const data: Array<PropsData> = [
     features: [
       {
         name: 'Open concept layout',
-        isPackage: false,
+        isAvailable: false,
       },
       {
         name: 'Floor-to-ceiling windows',
-        isPackage: false,
+        isAvailable: false,
       },
       {
         name: 'Modern kitchen with high-end appliances',
-        isPackage: true,
+        isAvailable: true,
       },
     ],
 
@@ -110,7 +111,7 @@ const data: Array<PropsData> = [
       zip: '10012',
     },
     agent: {
-      isMember: true,
+      isPaid: true,
       name: '',
       email: '',
       phone: '',
@@ -130,15 +131,15 @@ const data: Array<PropsData> = [
     features: [
       {
         name: 'Large garden',
-        isPackage: true,
+        isAvailable: true,
       },
       {
         name: 'Wood-burning fireplace',
-        isPackage: false,
+        isAvailable: false,
       },
       {
         name: 'Beautiful views of the surrounding nature',
-        isPackage: true,
+        isAvailable: true,
       },
     ],
 
@@ -149,7 +150,7 @@ const data: Array<PropsData> = [
       zip: '12345',
     },
     agent: {
-      isMember: false,
+      isPaid: false,
       name: 'Bob Johnson',
       email: 'bob.johnson@example.com',
       phone: '555-666-7777',
@@ -159,9 +160,7 @@ const data: Array<PropsData> = [
 
 const App = () => (
   <>
-    <header>
-      <h1>🏠 Real Estate Listings</h1>
-    </header>
+    <Header />
     <main>
       {data.map(({ property, location, agent, detail, features }) => (
         <Property name={property.name} img={property.img}>
@@ -182,7 +181,7 @@ const App = () => (
             name={agent.name}
             email={agent.email}
             phone={agent.phone}
-            isMember={agent.isMember}
+            isPaid={agent.isPaid}
           />
         </Property>
       ))}

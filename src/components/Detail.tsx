@@ -6,15 +6,16 @@ const Detail: React.FC<PropsData['detail']> = ({
   bedrooms,
   garage,
 }) => {
-  let usDollar = new Intl.NumberFormat('en-US', {
+  const thaiBaht = new Intl.NumberFormat('th-TH', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'THB',
   }).format(price)
+
   return (
     <ul className="detail">
       <li>
         <b>Price: </b>
-        {`${usDollar}`}
+        {`${thaiBaht}`}
       </li>
       <li>
         <b>Bedrooms: </b>
@@ -26,7 +27,7 @@ const Detail: React.FC<PropsData['detail']> = ({
       </li>
       <li>
         <b>Garage: </b>
-        {garage} cars
+        {garage} {garage > 1 ? 'cars' : 'car'}
       </li>
     </ul>
   )

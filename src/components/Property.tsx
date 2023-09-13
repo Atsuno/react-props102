@@ -5,14 +5,12 @@ const Property: FC<PropsData['property'] & PropsWithChildren> = ({
   name,
   img,
   children,
-}) => {
-  return (
-    <section className="property">
-      <h2>{name}</h2>
-      <img className="property-image" src={img} alt={name} />
-      {children}
-    </section>
-  )
-}
+}) => (
+  <section className="property">
+    <h2>{name}</h2>
+    <img className="property-image" src={img} alt={name} />
+    {children}
+  </section>
+)
 
 export default Property
